@@ -1,0 +1,11 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/nvme0n1p5
+UUID=54f7ab37-b6bf-470c-8dac-c5372d243158	/         	ext4    rw,relatime			0 1
+UUID=81347c89-850a-4766-b920-c057b778d034	/mnt/manjaro	ext4	rw,x-gvfs-show			0 2
+UUID=D648F3DF48F3BC75				/mnt/external	auto	nosuid,nodev,nofail,x-gvfs-show 0 0
+UUID=B2C6D4F7C6D4BCB3 				/mnt/ssd	auto	nosuid,nodev,nofail,x-gvfs-show 0 0
+
+/swapfile					none		swap	defaults			0 0
