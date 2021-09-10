@@ -1,6 +1,27 @@
 #!/bin/bash
 
-####################################################
+# Basic System Config
+################################################################################
+
+# System Clock
+ln -sf /usr/share/zoneinfo/US/Arizona /etc/localtime
+hwclock --systohc
+
+# Locale
+sed -i '177s/.//' /etc/locale.gen
+locale-gen
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+
+# Host
+echo "mowery" >> /etc/hostname
+echo "127.0.0.1	localhost" >> /etc/hosts
+echo "::1	localhost" >> /etc/hosts
+echo "127.0.1.1	mowery.localdomain	mowery" >> /etc/hosts
+
+# Root Password
+echo root:password | chpasswd
+
+################################################################################
 # INSTALLING SOFTWARE
 # 
 # To install software, use the following command:
@@ -13,91 +34,71 @@
 #
 # To remove software, use the following command:
 # sudo pacman -Rs --noconfirm <name>
-####################################################
+################################################################################
 
-# TODO: Add multilib to pacman config
-# multilib config here
+# Nvidia Drivers
+pacman -S --noconfirm --needed nvidia nvidia-utils nvidia-settings
+
+# Base Software
+pacman -S vim networkmanager base-devel openssh git man-db unzip mlocate bpytop pulseaudio pavucontrol adobe-source-code-pro-fonts sudo
 
 # Terminal
-
-sudo pacman -S --noconfirm --needed kitty
-sudo pacman -S --noconfirm --needed vim
-sudo pacman -S --noconfirm --needed zsh
-sudo pacman -S --noconfirm --needed powerline
-sudo pacman -S --noconfirm --needed powerline-vim
-sudo pacman -S --noconfirm --needed powerline-fonts
-
-# System Utilities
-
-sudo pacman -S --noconfirm --needed git
-sudo pacman -S --noconfirm --needed man-db
-sudo pacman -S --noconfirm --needed unzip
-sudo pacman -S --noconfirm --needed mlocate
-sudo pacman -S --noconfirm --needed ntfs-3g
-sudo pacman -S --noconfirm --needed xautolock
-
-# File Browser
-
-sudo pacman -S --noconfirm --needed pcmanfm
-#sudo pacman -S --noconfirm --needed thunar
+pacman -S --noconfirm --needed kitty zsh powerline powerline-vim powerline-fonts
 
 # Performance
-
-sudo pacman -S --noconfirm --needed htop
-sudo pacman -S --noconfirm --needed hwinfo
-sudo pacman -S --noconfirm --needed bpytop
-sudo pacman -S --noconfirm --needed conky
-
-# Notifications
-
-sudo pacman -S --noconfirm --needed dunst
-
-# Browser
-
-sudo pacman -S --noconfirm --needed firefox
-#sudo pacman -S --noconfirm --needed chromium
-
-# Chat
-
-sudo pacman -S --noconfirm --needed discord
+pacman -S --noconfirm --needed conky bpytop
 
 # Multimedia
+pacman -S --noconfirm --needed mpv feh youtube-dl flameshot nitrogen
 
-sudo pacman -S --noconfirm --needed mpv
-sudo pacman -S --noconfirm --needed feh
-#sudo pacman -S --noconfirm --needed vlc
-sudo pacman -S --noconfirm --needed youtube-dl
-#sudo pacman -S --noconfirm --needed deadbeef
-sudo pacman -S --noconfirm --needed flameshot
+# Lock
+pacman -S --noconfirm --needed xautolock betterlockscreen
 
-# Backup
+# Notifications
+pacman -S --noconfirm --needed dunst
 
-sudo pacman -S --noconfirm --needed clonezilla
+# Disk Management
+pacman -S --noconfirm --needed pcmanfm gparted
 
-# Gaming
+# Browser
+pacman -S --noconfirm --needed firefox
 
-sudo pacman -S --noconfirm --needed steam
-sudo pacman -S --noconfirm --needed lutris
+# Bluetooth
+#pacman -S --noconfirm --needed bluez bluez-utils
 
-# Customization
 
-sudo pacman -S --noconfirm --needed nitrogen
-sudo pacman -S --noconfirm --needed neofetch
-sudo pacman -S --noconfirm --needed rofi
+# TODO: Add multilib support in pacman
+
+#sudo pacman -S --noconfirm --needed discord
+#sudo pacman -S --noconfirm --needed steam
+#sudo pacman -S --noconfirm --needed lutris
+#sudo pacman -S --noconfirm --needed rofi
 
 # Fonts
 
-sudo pacman -S --noconfirm --needed ttf-fira-code
-sudo pacman -S --noconfirm --needed ttf-fira-mono
-sudo pacman -S --noconfirm --needed ttf-fira-sans
-sudo pacman -S --noconfirm --needed adobe-source-code-pro-fonts
-sudo pacman -S --noconfirm --needed nerd-fonts-source-code-pro
+#sudo pacman -S --noconfirm --needed ttf-fira-code
+#sudo pacman -S --noconfirm --needed ttf-fira-mono
+#sudo pacman -S --noconfirm --needed ttf-fira-sans
+#sudo pacman -S --noconfirm --needed adobe-source-code-pro-fonts
+#sudo pacman -S --noconfirm --needed nerd-fonts-source-code-pro
 
-# Audio
+# Boot Manager (Refind)
+################################################################################
 
-sudo pacman -S --noconfirm --needed pulseaudio
-#sudo pacman -S --noconfirm --needed pulse-asla
-sudo pacman -S --noconfirm --needed pavucontrol
+# Copy refind config
 
-# Develop and Compile
-sudo pacman -S --noconfirm --needed base-devel
+# System Services
+################################################################################
+
+systemctl enable NetworkManager
+
+# User Setup
+################################################################################
+
+useradd -m james
+echo james:password | chpasswd
+
+# Wrapping Up
+################################################################################
+
+printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
