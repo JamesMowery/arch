@@ -1,6 +1,6 @@
 #!/bin/bash
 
-####################################################
+################################################################################
 # INSTALLING SOFTWARE
 # 
 # To install software, use the following command:
@@ -13,16 +13,12 @@
 #
 # To remove software, use the following command:
 # sudo pacman -Rs --noconfirm <name>
-####################################################
+################################################################################
 
 # LOGIN
 
-sudo pacman -S --noconfirm --needed lightdm
-sudo pacman -S --noconfirm --needed lightdm-gtk-greeter
-sudo pacman -S --noconfirm --needed lightdm-gtk-greeter-settings
+sudo pacman -S --noconfirm --needed lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
 
 # QTILE
 
-sudo pacman -S --noconfirm --needed qtile
-sudo pacman -S --noconfirm --needed python-setuptools
-sudo pacman -S --noconfirm --needed python-psutil
+sudo pacman -S --noconfirm --needed qtile python-setuptools python-psutil
