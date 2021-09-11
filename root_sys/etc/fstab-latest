@@ -1,0 +1,36 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+
+
+# SSD 512 GB - SDA
+################################################################################
+
+# /dev/sda3
+UUID=c99f08ca-bd54-499d-ac81-44d6d6b6d929	/         	ext4      	rw,noatime	0 1
+
+# /dev/sda1
+UUID=92B0-4BAE      	/efi      	vfat      	rw,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/sda2
+UUID=818b0dc1-d098-4b23-b26b-e81fb808bedf	none      	swap      	defaults  	0 0
+
+# SSD 2 TB - SDB
+################################################################################
+
+UUID=cd3f81f9-caa9-486a-8142-7a30ce3fa123	/mnt/data	ext4	rw,noatime,x-gvfs-show	0 0
+
+# NVME 512 GB - NVME0N1
+################################################################################
+
+# /dev/nvme0n1p5
+UUID=54f7ab37-b6bf-470c-8dac-c5372d243158       /mnt/arch_old	ext4	rw,noatime,x-gvfs-show	0 0
+UUID=81347c89-850a-4766-b920-c057b778d034       /mnt/manjaro	ext4	rw,noatime,x-gvfs-show	0 0
+
+# MY PASSPORT ULTRA 2 TB - SDD
+################################################################################
+
+UUID=D648F3DF48F3BC75                           /mnt/external	auto	rw,noatime,nofail,x-gvfs-show	0 0
+#UUID=B2C6D4F7C6D4BCB3                           /mnt/ssd	auto	rw,noatime,nosuid,nodev,x-gvfs-show	0 0
+

@@ -52,16 +52,16 @@ pacman -S --noconfirm --needed conky bpytop
 pacman -S --noconfirm --needed mpv feh youtube-dl flameshot nitrogen
 
 # Lock
-pacman -S --noconfirm --needed xautolock betterlockscreen
+pacman -S --noconfirm --needed xautolock
 
 # Notifications
 pacman -S --noconfirm --needed dunst
 
 # Disk Management
-pacman -S --noconfirm --needed pcmanfm gparted
+pacman -S --noconfirm --needed thunar gparted
 
 # Browser
-pacman -S --noconfirm --needed firefox
+pacman -S --noconfirm --needed vivaldi
 
 # Bluetooth
 #pacman -S --noconfirm --needed bluez bluez-utils
