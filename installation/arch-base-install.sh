@@ -58,14 +58,13 @@ pacman -S --noconfirm --needed xautolock
 pacman -S --noconfirm --needed dunst
 
 # Disk Management
-pacman -S --noconfirm --needed thunar gparted
+pacman -S --noconfirm --needed thunar gparted gvfs
 
 # Browser
 pacman -S --noconfirm --needed vivaldi
 
 # Bluetooth
-#pacman -S --noconfirm --needed bluez bluez-utils
-
+pacman -S --noconfirm --needed bluez bluez-utils
 
 # TODO: Add multilib support in pacman
 
@@ -76,11 +75,20 @@ pacman -S --noconfirm --needed vivaldi
 
 # Fonts
 
-#sudo pacman -S --noconfirm --needed ttf-fira-code
-#sudo pacman -S --noconfirm --needed ttf-fira-mono
-#sudo pacman -S --noconfirm --needed ttf-fira-sans
-#sudo pacman -S --noconfirm --needed adobe-source-code-pro-fonts
+sudo pacman -S --noconfirm --needed ttf-fira-code ttf-fira-mono ttf-fira-sans adobe-source-code-pro-fonts
+
 #sudo pacman -S --noconfirm --needed nerd-fonts-source-code-pro
+
+# X
+################################################################################
+
+#sudo pacman -S xorg
+
+# Wayland
+################################################################################
+
+#sudo pacman -S wayland
+
 
 # Boot Manager (Refind)
 ################################################################################
@@ -91,12 +99,14 @@ pacman -S --noconfirm --needed vivaldi
 ################################################################################
 
 systemctl enable NetworkManager
+#systemctl enable bluetooth
 
 # User Setup
 ################################################################################
 
 useradd -m james
 echo james:password | chpasswd
+usermod -aG wheel james
 
 # Wrapping Up
 ################################################################################
