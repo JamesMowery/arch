@@ -40,10 +40,10 @@ echo root:password | chpasswd
 pacman -S --noconfirm --needed nvidia nvidia-utils nvidia-settings
 
 # Base Software
-pacman -S vim networkmanager base-devel util-linux openssh git man-db unzip mlocate bpytop sudo
+pacman -S vim networkmanager base-devel util-linux openssh git man-db unzip mlocate sudo
 
 # Sound
-pacman -S --noconfirm pipewire wireplumber
+pacman -S --noconfirm --needed pipewire wireplumber
 
 # Terminal
 pacman -S --noconfirm --needed kitty zsh powerline powerline-vim powerline-fonts
@@ -52,7 +52,7 @@ pacman -S --noconfirm --needed kitty zsh powerline powerline-vim powerline-fonts
 pacman -S --noconfirm --needed conky bpytop
 
 # Multimedia
-pacman -S --noconfirm --needed mpv feh youtube-dl flameshot nitrogen
+pacman -S --noconfirm --needed mpv feh yt-dlp streamlink flameshot nitrogen
 
 # Lock
 pacman -S --noconfirm --needed xautolock
@@ -64,7 +64,8 @@ pacman -S --noconfirm --needed dunst
 pacman -S --noconfirm --needed thunar gparted gvfs
 
 # Browser
-pacman -S --noconfirm --needed vivaldi
+# pacman -S --noconfirm --needed vivaldi
+pacman -S --noconfirm --needed chromium
 
 # Bluetooth
 pacman -S --noconfirm --needed bluez bluez-utils
