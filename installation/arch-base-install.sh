@@ -40,7 +40,10 @@ echo root:password | chpasswd
 pacman -S --noconfirm --needed nvidia nvidia-utils nvidia-settings
 
 # Base Software
-pacman -S vim networkmanager base-devel openssh git man-db unzip mlocate bpytop pulseaudio pavucontrol adobe-source-code-pro-fonts sudo
+pacman -S vim networkmanager base-devel util-linux openssh git man-db unzip mlocate bpytop sudo
+
+# Sound
+pacman -S --noconfirm pipewire wireplumber
 
 # Terminal
 pacman -S --noconfirm --needed kitty zsh powerline powerline-vim powerline-fonts
@@ -99,6 +102,7 @@ sudo pacman -S --noconfirm --needed ttf-fira-code ttf-fira-mono ttf-fira-sans ad
 ################################################################################
 
 systemctl enable NetworkManager
+systemctl enable fstrim.timer
 #systemctl enable bluetooth
 
 # User Setup
