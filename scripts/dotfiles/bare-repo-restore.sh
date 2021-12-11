@@ -1,5 +1,7 @@
-alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+#!/bin/bash
+
+echo "dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
 echo ".dotfiles" >> $HOME/.gitignore
 git clone --bare https://github.com/JamesMowery/dotfiles $HOME/.dotfiles
-dots config --local status.showUntrackedFiles no
-dots checkout
+git config --file $HOME/.dotfiles/config status.ShowUntrackedFiles no
+git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout
