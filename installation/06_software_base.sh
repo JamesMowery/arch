@@ -19,6 +19,11 @@ pacman -S --noconfirm --needed nvidia nvidia-utils nvidia-settings
 # Intel & Other Video Drivers
 pacman -S --noconfirm --needed mesa mesa-utils lib32-mesa intel-media-driver glu
 
+# Audio
+pacman -S --noconfirm --needed pipewire lib32-pipewire 
+pacman -Rs --noconfirm pulseaudio-alsa
+pcaman -S --noconfirm --needed pipewire-alsa pipewire-pulse pipewire-jack lib32-pipewire-jack
+
 # Performance
 pacman -S --noconfirm --needed btop
 
