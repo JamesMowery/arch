@@ -1,3 +1,5 @@
-echo "Run: mount /dev/XXX /mnt"
-echo "Run: mount/dev/YYY /mnt/boot"
-echo "Run: swapon /dev/ZZZ"
+echo "Create directories: mkdir -p /mnt/{boot,home}"
+echo "Run: mount /dev/</> /mnt"
+echo "Run mount /dev/</home> /mnt/home"
+echo "Run: mount/dev/</boot> /mnt/boot"
+echo "Run: swapon /dev/<swap>"

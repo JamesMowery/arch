@@ -1,7 +1,7 @@
 lsblk -f
-echo "Run: fdisk /dev/sdX & press "g" for GPT drive."
+echo "Run: gdisk /dev/sdX."
 echo "Press 'n' and create a 300MB partition."
-echo "Press 't' and select '1' for 'EFI System'."
+echo "Press 't' and select 'ef00' (gdisk) or '1' (fdisk) for 'EFI System'."
 echo "Create other partitions as necessary."
 echo "Press 'w' to write, then format the partitions."
 

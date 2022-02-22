@@ -13,7 +13,7 @@
 # sudo pacman -Rs --noconfirm <name>
 ################################################################################
 
-sudo pacman -S --noconfirm --needed plocate base-devel util-linux openssh unzip bluez bluez-utils cups cups-pdf
+sudo pacman -S --noconfirm --needed plocate base-devel util-linux openssh unzip bluez bluez-utils cups cups-pdf networkmanager git
 
 # System Services
 ################################################################################
