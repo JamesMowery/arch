@@ -6,3 +6,4 @@ curl -LO https://raw.githubusercontent.com/JamesMowery/arch/main/installation/05
 curl -LO https://raw.githubusercontent.com/JamesMowery/arch/main/installation/06_software_core.sh
 curl -LO https://raw.githubusercontent.com/JamesMowery/arch/main/installation/07_software_base.sh
 curl -LO https://raw.githubusercontent.com/JamesMowery/arch/main/installation/08_software_extra.sh
+./01_prep.sh

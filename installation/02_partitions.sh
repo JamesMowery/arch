@@ -6,4 +6,5 @@ echo "---------------------------"
 echo "Run: mkfs.vfat /dev/<boot_partition> for EFI System partition."
 echo "Run: mkfs.ext4 /dev/<root_partition> for / partition."
 echo "Run: mkswap /dev/<swap_partition> then swapon /dev/<swap_partition>."
-
+echo "---------------------------"
+echo "Continue with 03_mount.sh"

@@ -36,5 +36,6 @@ echo "[multilib]" >> /etc/pacman.conf
 echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
 sudo pacman -Sy
 
-echo "Continue with 05_software_base.sh"
+echo "---------------------------------------"
+echo "Continue with 06_software_core.sh"
 ./06_software_base.sh
