@@ -26,13 +26,15 @@ echo root:password | chpasswd
 
 useradd -m james
 echo james:password | chpasswd
-usermod -aG wheel james
+#usermod -aG libvert james
+
+echo "james ALL=(ALL) ALL" >> /etc/sudoers.d/james
 
 # Enable Multilib
 ################################################################################
 echo "[multilib]" >> /etc/pacman.conf
 echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
-sudo pacman -Syu
+sudo pacman -Sy
 
 echo "Continue with 05_software_base.sh"
 ./06_software_base.sh

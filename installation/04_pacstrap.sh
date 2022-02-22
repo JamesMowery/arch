@@ -1,5 +1,5 @@
 echo "Running pacstrap"
-pacstrap /mnt base linux linux-firmware vim intel-ucode 
+pacstrap /mnt base linux linux-firmware vim intel-ucode sudo 
 echo "Generating fstab"
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "Chrooting into arch"

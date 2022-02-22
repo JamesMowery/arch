@@ -13,12 +13,13 @@
 # sudo pacman -Rs --noconfirm <name>
 ################################################################################
 
-sudo pacman -S --noconfirm --needed plocate base-devel util-linux openssh unzip bluez bluez-utils cups cups-pdf networkmanager git
+sudo pacman -S --noconfirm --needed plocate base-devel util-linux openssh unzip bluez bluez-utils cups cups-pdf reflector xdg-user-dirs xdg-utils gvfs pipewire pipeware-alsa pipewire-pulse pipewire-jack os-prober
 
 # System Services
 ################################################################################
 
 systemctl enable NetworkManager
-systemctl enable fstrim.timer
 systemctl enable bluetooth
 systemctl enable cups.socket
+systemctl enable reflector.timer
+systemctl enable fstrim.timer
