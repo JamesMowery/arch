@@ -22,25 +22,17 @@ echo "127.0.1.1	mowery.localdomain	mowery" >> /etc/hosts
 ################################################################################
 
 # Root Password
-echo root:<password> | chpasswd
+echo root:password | chpasswd
 
 useradd -m james
-echo james:<password> | chpasswd
+echo james:password | chpasswd
 usermod -aG wheel james
-
-# System Services
-################################################################################
-
-systemctl enable NetworkManager
-systemctl enable fstrim.timer
-systemctl enable bluetooth
-systemctl enable cups.socket
 
 # Enable Multilib
 ################################################################################
-echo "[multilib]" >> /etc/pacman.d/mirrorlist
-echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.d/mirrorlist
+echo "[multilib]" >> /etc/pacman.conf
+echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
 sudo pacman -Syu
 
 echo "Continue with 05_software_base.sh"
-./05_software_base.sh
+./06_software_base.sh
