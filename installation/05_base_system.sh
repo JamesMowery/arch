@@ -8,7 +8,8 @@ ln -sf /usr/share/zoneinfo/US/Arizona /etc/localtime
 hwclock --systohc
 
 # Locale
-sed -i '178s/.//' /etc/locale.gen
+sed -i '/en_US.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
+#sed -i '178s/.//' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
