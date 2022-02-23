@@ -17,7 +17,7 @@
 # BASE SOFTWARE
 ################################################################################
 
-sudo pacman -S --noconfirm --needed base-devel bluez bluez-utils cups cups-pdf gvfs mesa nvidia nvidia-utils nvidia-settings openssh os-prober pipewire pipeware-alsa pipewire-alsa pipewire-pulse pipewire-jack plocate reflector util-linux unzip xdg-user-dirs xdg-utils
+sudo pacman -S --noconfirm --needed base-devel bluez bluez-utils cups cups-pdf gvfs mesa networkmanager nvidia nvidia-utils nvidia-settings openssh os-prober pipewire pipeware-alsa pipewire-alsa pipewire-pulse pipewire-jack plocate reflector util-linux unzip xdg-user-dirs xdg-utils
 
 
 # Boot Manager (Grub)
