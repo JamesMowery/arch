@@ -5,5 +5,5 @@ genfstab -U /mnt >> /mnt/etc/fstab
 echo "Chrooting into arch"
 arch-chroot /mnt
 echo "---------------------------------------"
-echo "Continue with 05_base_system.sh"
-#./05_base_system.sh
+echo "Continue with 05_base.sh"
+#./05_base.sh
