@@ -28,8 +28,8 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # Boot Manager (Refind)
 ################################################################################
-#sudo pacman -S --nocnfirm --needed refind
-
+#sudo pacman -S --noconfirm --needed refind
+#refind-install
 
 ################################################################################
 # EXTRA SOFTWARE
