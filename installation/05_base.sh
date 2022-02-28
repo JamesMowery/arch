@@ -39,4 +39,4 @@ sudo pacman -Sy
 
 echo "---------------------------------------"
 echo "Continue with 06_software_core.sh"
-./06_software_base.sh
+#./06_software_core.sh
