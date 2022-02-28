@@ -7,3 +7,4 @@ curl -LO https://raw.githubusercontent.com/JamesMowery/arch/main/installation/06
 curl -LO https://raw.githubusercontent.com/JamesMowery/arch/main/installation/07_software_extra.sh
 curl -LO https://raw.githubusercontent.com/JamesMowery/arch/main/installation/08_kde.sh
 curl -LO https://raw.githubusercontent.com/JamesMowery/arch/main/installation/08_kde_minimal.sh
+curl -LO https://raw.githubusercontent.com/JamesMowery/arch/main/installation/08_ghome.sh
