@@ -1,26 +1,11 @@
-sudo pacman -S kde plasma-desktop sddm
+# KDE Base
+sudo pacman -S plasma-desktop sddm sddm-kcm
 
-####################################################
-# Applications
-####################################################
+# KDE Core
+sudo pacman -S bluedevil breeze breeze-gtk discover kde-cli-tools kde-gtk-config kdecoration kdeplasma-addons khotkeys kinfocenter kmenuedit kscreen kscreenlocker kwin libkscreen libksysguard oxygen plasma-disks plasma-firewall plasma-integration plasma-nm plasma-pa plasma-systemmonitor plasma-workspace plasma-workspace-wallpapers polkit-kde-agent systemsettings xdg-desktop-portal-kde
 
-# Graphics
-sudo pacman -S kcolorchooser kdegraphics-mobipocket kdegraphics-thumbnailers okular spectacle
+# KDE Software
+sudo pacman -S ark dolphin dolphin-plugins filelight kate kcalc kcharselect kcolorchooser kdenetwork-filesharing kdf kdialog kompare ksystemlog okular partitionmanager print-manager spectacle 
 
-# Multimedia
-sudo pacman -S kmix
-
-# Network
-sudo pacman -S kdeconnect kdenetwork-filesharing kio-extras kio-gdrive krdc krfb zeroconf-ioslave
-
-# KDE SDK
-sudo pacman -S dolphin-plugins
-
-# KDE System
-sudo pacman -S dolphin kcron khelpcenter ksystemlog partitionmanager
-
-# KDE Utilities
-sudo pacman -S ark filelight kate kbackup kcalc kcharselect kdf kdialog kfind kgpg kwalletmanager print-manager yakuake
-
-# Other
-sudo pacman -S sddm-kcm kdeplasma-addons
+# KDE Extras
+#sudo pacman -S kdeconnect
