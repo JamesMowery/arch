@@ -17,7 +17,7 @@
 # BASE SOFTWARE
 ################################################################################
 
-sudo pacman -S base-devel bluez bluez-utils cups cups-pdf gvfs hplip networkmanager nvidia nvidia-utils openssh os-prober pipewire pipewire-alsa pipewire-pulse pipewire-jack plocate reflector util-linux unrar unzip xdg-user-dirs xdg-utils
+sudo pacman -S avahi base-devel bluez bluez-utils cups cups-pdf fish gvfs hplip networkmanager nvidia nvidia-utils openssh os-prober pipewire pipewire-alsa pipewire-pulse pipewire-jack plocate reflector util-linux unrar unzip xdg-user-dirs xdg-utils
 
 # Boot Manager (Refind)
 ################################################################################
@@ -52,10 +52,11 @@ pacman -S --noconfirm --needed firefox
 
 systemctl enable NetworkManager
 systemctl enable bluetooth
-systemctl enable cups
+systemctl enable cups.socket
 systemctl enable reflector.timer
 systemctl enable fstrim.timer
 systemctl enable nvidia-suspend
+systemctl enable avahi-daemon.service
 
 # Update Default Shell To Fish
 chsh -s /usr/bin/fish
