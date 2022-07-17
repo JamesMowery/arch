@@ -1,11 +1,32 @@
 # Static information about the filesystems.
-# See fstab(5) for details.
-
 # <file system> <dir> <type> <options> <dump> <pass>
-# /dev/nvme0n1p5
-UUID=54f7ab37-b6bf-470c-8dac-c5372d243158	/         	ext4    rw,relatime			0 1
-UUID=81347c89-850a-4766-b920-c057b778d034	/mnt/manjaro	ext4	rw,x-gvfs-show			0 2
-UUID=D648F3DF48F3BC75				/mnt/external	auto	nosuid,nodev,nofail,x-gvfs-show 0 0
-UUID=B2C6D4F7C6D4BCB3 				/mnt/ssd	auto	nosuid,nodev,nofail,x-gvfs-show 0 0
 
-/swapfile					none		swap	defaults			0 0
+#### SYSTEM
+
+# /dev/nvme0n1p4
+UUID=<UUID>         /         	btrfs     	rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@	0 0
+
+# /dev/nvme0n1p1
+UUID=82CE-FE7C      /boot/efi 	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/sda1
+UUID=<UUID>         /home     	btrfs     	rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@home	0 0
+
+# /dev/<device>
+UUID=<UUID>         /var      	btrfs     	rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvolid=257,subvol=/@var	0 0
+
+#### OTHER OS
+
+# /dev/nvme0n1p3
+#UUID=4cb0571e-e832-4a34-bb6e-b9c1f604d4bc      /mnt/Nix	ext4		rw,noatime,nofail	0 0
+
+##### STATIC DRIVES
+
+# /dev/sda1
+UUID=f68c770d-37dc-4e8e-ac09-931f54dcee69       /mnt/Games        btrfs     rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvolid=257,subvol=/@games	0 0
+
+# /dev/sdb2
+#UUID=D648F3DF48F3BC75                          /mnt/External     ntfs	  	rw,noatime,nofail	0 0
+
+# /dev/sdb
+UUID=cd3f81f9-caa9-486a-8142-7a30ce3fa123       /mnt/Data         ext4      rw,noatime	0 0
